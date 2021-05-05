@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'dev'),
+    'env' => array_key_exists('APP_ENV', $_SERVER) ? $_SERVER['APP_ENV'] : env('APP_ENV', 'dev'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => array_key_exists('APP_DEBUG', $_SERVER) ? $_SERVER['APP_DEBUG'] : (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
