@@ -13,9 +13,15 @@ class AddNullableToFields extends Migration
      */
     public function up()
     {
-        Schema::table('fields', function (Blueprint $table) {
+        Schema::table('tb_tree', function (Blueprint $table) {
 
             DB::statement("ALTER TABLE tb_tree MODIFY is_active TINYINT UNSIGNED NULL");
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('image')->nullable()->change();
+            $table->dateTime('last_login')->nullable()->change();
+            // DB::statement("ALTER TABLE tb_tree MODIFY is_active TINYINT UNSIGNED NULL");
         });
     }
 
