@@ -15,6 +15,7 @@ class AddNullableToTbTree extends Migration
     public function up()
     {
         Schema::table('tb_tree', function (Blueprint $table) {
+            $table->integer('depth')->nullable()->change();
             $table->text('description')->nullable()->change();
             $table->string('picture')->nullable()->change();
             $table->text('additional_pictures')->nullable()->change();

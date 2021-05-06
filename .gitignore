@@ -6,6 +6,8 @@
 /vendor
 .env
 .env.backup
+herb.cer
+herb.pem
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

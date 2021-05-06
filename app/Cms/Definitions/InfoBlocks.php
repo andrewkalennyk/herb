@@ -4,23 +4,13 @@ namespace App\Cms\Definitions;
 
 use App\Models\InfoBlock;
 use Vis\Builder\Services\Actions;
-use App\Models\Article;
-use Vis\Builder\Fields\{Color,
-    Foreign,
+use Vis\Builder\Fields\{
     Hidden,
-    ManyToManyAjax,
-    MultiImage,
-    Relations\Options,
     Select,
-    Password,
-    ForeignAjax,
     Id,
     Checkbox,
-    Datetime,
     Image,
-    File,
-    Text,
-    Definition};
+    Text};
 use Vis\Builder\Definitions\Resource;
 
 class InfoBlocks extends Resource

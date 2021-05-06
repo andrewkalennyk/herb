@@ -19,8 +19,24 @@ class Admin extends AdminBase
 
             [
                 'title' => 'Слайдер',
-                'icon'  => 'picture-o',
+                'icon'  => 'sliders-h',
                 'link'  => '/sliders',
+            ],
+
+            [
+                'title' => 'Товары',
+                'icon'  => 'shopping-bag',
+                'link'  => '/products',
+                'submenu' => [
+                    [
+                        'title' => 'Категория',
+                        'link'  => '/product_categories',
+                    ],
+                    [
+                        'title' => 'Товары',
+                        'link'  => '/products',
+                    ]
+                ],
             ],
 
             [
