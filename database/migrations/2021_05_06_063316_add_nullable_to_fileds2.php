@@ -18,6 +18,11 @@ class AddNullableToFileds2 extends Migration
             $table->text('permissions')->nullable()->change();
             $table->dateTime('last_login')->nullable()->change();
         });
+
+        Schema::table('activations', function (Blueprint $table) {
+            $table->string('code')->nullable()->change();
+            $table->dateTime('completed_at')->nullable()->change();
+        });
     }
 
     /**
