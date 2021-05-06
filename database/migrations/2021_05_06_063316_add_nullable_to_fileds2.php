@@ -15,6 +15,7 @@ class AddNullableToFileds2 extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('image')->nullable()->change();
+            $table->text('permissions')->nullable()->change();
             $table->dateTime('last_login')->nullable()->change();
         });
     }
