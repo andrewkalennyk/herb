@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bkwld/cloner" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bumbummen99/shoppingcart" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cartalyst/sentinel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cartalyst/support" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

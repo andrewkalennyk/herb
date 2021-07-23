@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers;
 
 use App\Models\Tree;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
@@ -15,6 +16,8 @@ class HeaderComposer
             return Tree::isMenu()->get();
         });
 
-        $view->with('menu', $menu);
+        $user = Sentinel::getUser();
+
+        $view->with('menu', $menu)->with('user', $user);
     }
 }

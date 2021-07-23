@@ -27,6 +27,7 @@
     <meta property="og:description" content="Production-ready Portfolio and Case Study Template for Visual Designers">
     <meta property="og:site_name" content="Folio Designer">
     <meta property="fb:admins" content="132951670226590"><link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;500&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="/css/app.min.css">
     <script>
@@ -58,11 +59,31 @@
 
 </div>
 
+@include('popups.cart')
+@include('popups.login')
+
 <!-- scripts-->
 <script src="/js/lib/jquery.min.js"></script>
 <script src="/js/lib/jquery.fancybox.min.js"></script>
+<script src="/js/lib/jquery.validate.min.js"></script>
 <script src="/js/lib/slick.min.js"></script>
 <script src="/js/app.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/cart.js"></script>
+
+<script>
+    Cart.lang = '{{app()->getLocale() !== 'ru' ? app()->getLocale() : ''}}'
+</script>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+
+@yield('after_script')
 
 @include('partials.svg')
 
