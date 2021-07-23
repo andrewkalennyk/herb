@@ -40,6 +40,12 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Заказы',
+                'icon'  => 'dollar-sign',
+                'link'  => '/orders',
+            ],
+
+            [
                 'title' => 'Настройки',
                 'icon'  => 'cog',
                 'link'  => '/settings_block',

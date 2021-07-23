@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Product page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Production-ready Portfolio and Case Study Template for Visual Designers">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ui8">
+    <meta name="twitter:title" content="Folio Designer">
+    <meta name="twitter:description" content="Production-ready Portfolio and Case Study Template for Visual Designers">
+    <meta name="twitter:creator" content="@ui8">
+    <meta name="twitter:image" content="https://ui8-folio.herokuapp.com/img/twitter-card.jpg">
+    <meta property="og:title" content="Folio Designer">
+    <meta property="og:type" content="Article">
+    <meta property="og:url" content="https://ui8.net/ui8/products/folio-designer">
+    <meta property="og:image" content="https://ui8-folio.herokuapp.com/img/fb-og-image.jpg">
+    <meta property="og:description" content="Production-ready Portfolio and Case Study Template for Visual Designers">
+    <meta property="og:site_name" content="Folio Designer">
+    <meta property="fb:admins" content="132951670226590"><link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;500&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="css/app.min.css">
+    <script>
+      var viewportmeta = document.querySelector('meta[name="viewport"]');
+      if (viewportmeta) {
+        if (screen.width < 414) {
+          var newScale = screen.width / 414;
+          viewportmeta.content = 'width=414, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+        } else {
+          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- outer-->
+    <div class="outer">
+      <!-- header-->
+      <header class="header js-header">
+        <div class="header__center center">
+          <button class="header__burger js-header-burger"><svg viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="1.5" rx="0.75"/>
+<rect y="7" width="20" height="1.5" rx="0.75"/>
+<rect y="14" width="20" height="1.5" rx="0.75"/>
+</svg>
+          </button>
+          <div class="header__wrap js-header-wrap">
+            <div class="header__inner">
+              <nav class="header__nav"><a href="about.html">О нас</a><a href="catalog.html">Продукция</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a></nav>
+              <div class="header__group"><a class="header__link" data-fancybox data-src="#login" data-touch="false" href="javascript:;">
+                  <svg class="icon icon-user">
+                    <use xlink:href="#icon-user"></use>
+                  </svg></a>
+                <!-- select-->
+                <div class="select js-select">
+                  <div class="select__head js-select-head"><span>Ua</span>
+                    <svg class="icon icon-arrow">
+                      <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                  </div>
+                  <div class="select__drop js-select-drop"><a class="select__option" href="#">Ua</a><a class="select__option" href="#">Ru</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="header__close js-header-close"></div>
+          </div><a class="header__logo" href="/"><img src="img/herbarius.svg" alt="Herbarius"></a>
+          <div class="header__menu">
+            <button class="header__link js-header-link">
+              <svg class="icon icon-search">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            </button>
+            <form class="header__search js-header-search" action="search.html">
+              <input type="search" name="search">
+            </form><a class="header__link" data-fancybox data-src="#cart" data-touch="false" href="javascript:;">
+              <svg class="icon icon-cart">
+                <use xlink:href="#icon-cart"></use>
+              </svg></a>
+          </div>
+        </div>
+      </header>
+      <!-- container-->
+      <div class="container">
+        <!-- center-->
+        <div class="center">
+          <!-- back--><a class="back" href="#">
+            <svg class="icon icon-prev">
+              <use xlink:href="#icon-prev"></use>
+            </svg>В каталог товаров</a>
+          <!-- card-->
+          <div class="card">
+            <div class="card__topper">
+              <div class="card__title title">Название товара</div>
+              <div class="card__code">Артикул: 435345388</div>
+            </div>
+            <div class="card__row">
+              <div class="card__col">
+                <!-- gallery-->
+                <div class="gallery js-gallery">
+                  <div class="gallery__carousel js-gallery-carousel"><img src="img/content/product-1.jpg" alt="Preview"><img src="img/content/product-2.jpg" alt="Preview"><img src="img/content/product-3.jpg" alt="Preview"><img src="img/content/product-4.jpg" alt="Preview"></div>
+                  <div class="gallery__thumbs js-gallery-thumbs"><img src="img/content/product-1.jpg" alt="Thumb"><img src="img/content/product-2.jpg" alt="Thumb"><img src="img/content/product-3.jpg" alt="Thumb"><img src="img/content/product-4.jpg" alt="Thumb"></div>
+                </div>
+                <!-- video--><a class="video" data-fancybox href="https://www.youtube.com/watch?v=RbiprzmRSdQ"><img src="img/content/cover.jpg" alt="Cover">
+                  <svg class="icon icon-play">
+                    <use xlink:href="#icon-play"></use>
+                  </svg>
+                  <div class="video__title">Смотреть видео</div></a>
+              </div>
+              <div class="card__col">
+                <div class="card__head">
+                  <div class="card__title title title_md">Название товара</div>
+                  <div class="card__code">Артикул: 435345388</div>
+                </div>
+                <div class="card__short">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type</div>
+                <div class="card__details">
+                  <div class="card__field">
+                    <div class="card__label">Объем</div>
+                    <!-- select-->
+                    <div class="select js-select">
+                      <div class="select__head js-select-head"><span>100 гр.</span>
+                        <svg class="icon icon-arrow">
+                          <use xlink:href="#icon-arrow"></use>
+                        </svg>
+                      </div>
+                      <div class="select__drop js-select-drop">
+                        <div class="select__option js-select-option">100 гр.</div>
+                        <div class="select__option js-select-option">200 гр.</div>
+                        <div class="select__option js-select-option">300 гр.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card__price">350 грн</div>
+                  <button class="card__btn btn">
+                    <svg class="icon icon-branch">
+                      <use xlink:href="#icon-branch"></use>
+                    </svg>Купить
+                  </button>
+                </div>
+                <div class="card__section">
+                  <div class="card__caption title title_sm">Состав:</div>
+                  <ul class="card__storage">
+                    <li>Листья мяты</li>
+                    <li>Масло чайного дерева</li>
+                    <li>Экстракт эхинацеи</li>
+                    <li>Листья крапивы</li>
+                    <li>Листья мяты</li>
+                    <li>Масло чайного дерева</li>
+                    <li>Экстракт эхинацеи</li>
+                    <li>Листья крапивы</li>
+                  </ul>
+                </div>
+                <div class="card__section">
+                  <div class="card__caption title title_sm">Описание товара:</div>
+                  <div class="card__content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer-->
+      <footer class="footer">
+        <div class="footer__center center"><a class="footer__logo" href="/"><img src="img/herbarius.svg" alt="Herbarius"></a>
+          <nav class="footer__nav"><a href="about.html">О нас</a><a href="catalog.html">Продукция</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a></nav>
+          <div class="footer__socials"><a href="#"><img src="img/youtube.svg" alt="Youtube"></a><a href="#"><img src="img/facebook.svg" alt="Facebook"></a><a href="#"><img src="img/instagram.svg" alt="Instagram"></a></div>
+          <div class="footer__copyright">All rights reserved 2020</div>
+        </div>
+      </footer>
+    </div>
+    <!-- modals-->
+    <!-- login-->
+    <div class="auth js-auth" id="login" style="display: none">
+      <div class="auth__title title">
+        <div class="js-auth-title-login">Авторизация</div>
+        <div class="js-auth-title-password" style="display: none">Напоминание пароля</div>
+        <div class="js-auth-title-register" style="display: none">Регистрация</div>
+      </div>
+      <div class="auth__row">
+        <div class="auth__col">
+          <!-- form authorization-->
+          <form class="auth__form js-auth-form-login" action>
+            <div class="auth__field field">
+              <div class="field__label">Email</div>
+              <div class="field__wrap">
+                <input type="email" required>
+              </div>
+            </div>
+            <div class="auth__field field">
+              <div class="field__label">Пароль</div>
+              <div class="field__wrap">
+                <input type="password" required>
+              </div>
+            </div>
+            <div class="auth__actions">
+              <label class="switch">
+                <input type="checkbox" checked><span>Запомнить меня</span>
+              </label><a class="auth__link" href="#" data-toggle="password">Напомнить пароль</a>
+            </div>
+            <div class="auth__foot">
+              <button class="btn btn_black" type="submit">Авторизироваться</button>
+              <button class="btn" data-toggle="register">Зарегистрироваться</button>
+            </div>
+          </form>
+          <!-- form reset password-->
+          <form class="auth__form js-auth-form-password" action style="display: none">
+            <!-- field-->
+            <div class="auth__field field">
+              <div class="field__label">Email</div>
+              <div class="field__wrap">
+                <input type="email" required>
+              </div>
+            </div>
+            <div class="auth__actions">
+              <button class="btn btn_light" type="submit">Получить временный пароль</button><a class="auth__link" href="#" data-toggle="login">Уже не нужно</a>
+            </div>
+            <div class="auth__foot">
+              <button class="btn btn_black" data-toggle="login">Авторизироваться</button>
+              <button class="btn" data-toggle="register">Зарегистрироваться</button>
+            </div>
+          </form>
+          <!-- form registration-->
+          <form class="auth__form js-auth-form-register" action style="display: none">
+            <!-- field-->
+            <div class="auth__field field">
+              <div class="field__label">Фамилия</div>
+              <div class="field__wrap">
+                <input type="text" required>
+              </div>
+            </div>
+            <!-- field-->
+            <div class="auth__field field">
+              <div class="field__label">Имя</div>
+              <div class="field__wrap">
+                <input type="text" required>
+              </div>
+            </div>
+            <!-- field-->
+            <div class="auth__field field">
+              <div class="field__label">Номер телефона</div>
+              <div class="field__wrap">
+                <input type="text" required>
+              </div>
+            </div>
+            <!-- field-->
+            <div class="auth__field field">
+              <div class="field__label">Email</div>
+              <div class="field__wrap">
+                <input type="email" required>
+              </div>
+            </div>
+            <!-- field-->
+            <div class="auth__field field">
+              <div class="field__label">Пароль</div>
+              <div class="field__wrap">
+                <input type="password" required>
+              </div>
+              <div class="field__hint">Пароль должен содержать не менее 1 символа, не менее одной строчной и одной прописной буквы, а также не менее 1 цифры.</div>
+            </div>
+            <div class="auth__actions">
+              <!-- switch-->
+              <label class="switch">
+                <input type="checkbox" required><span>Подтверждаю согласие на обработку персональных данных</span>
+              </label>
+            </div>
+            <div class="auth__foot">
+              <button class="btn btn_black" type="submit">Зарегистрироваться</button>
+              <button class="btn" data-toggle="login">Я уже зарегистрирован</button>
+            </div>
+          </form>
+        </div>
+        <div class="auth__col">
+          <!-- enter-->
+          <div class="enter">
+            <div class="enter__title title title_sm">Войти как пользователь</div>
+            <div class="enter__wrap"><a class="enter__link" href="#"><img src="img/facebook-color.svg" alt="Facebook">Facebook</a><a class="enter__link" href="#"><img src="img/google-color.svg" alt="Google">Google</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cart-->
+    <div class="cart" id="cart" style="display: none">
+      <div class="cart__body">
+        <div class="cart__title title">Корзина</div>
+        <!-- order-->
+        <div class="order">
+          <table>
+            <tbody>
+              <tr>
+                <td><a class="order__preview"><img src="img/content/product-1.jpg" alt="Product 1"/></a></td>
+                <td><a class="order__title title" href="#">Название товара</a>
+                  <div class="order__param">100г.</div>
+                </td>
+                <td>
+                  <!-- value-->
+                  <div class="value">
+                    <button class="value__minus" type="button">-</button>
+                    <input class="value__input" type="text" value="1"/>
+                    <button class="value__plus" type="button">+</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="order__price">350&nbsp;грн</div>
+                </td>
+                <td>
+                  <button class="order__remove">
+                    <svg class="icon icon-trash">
+                      <use xlink:href="#icon-trash"></use>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><a class="order__preview"><img src="img/content/product-1.jpg" alt="Product 1"/></a></td>
+                <td><a class="order__title title" href="#">Название товара</a>
+                  <div class="order__param">100г.</div>
+                </td>
+                <td>
+                  <!-- value-->
+                  <div class="value">
+                    <button class="value__minus" type="button">-</button>
+                    <input class="value__input" type="text" value="1"/>
+                    <button class="value__plus" type="button">+</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="order__price">350&nbsp;грн</div>
+                </td>
+                <td>
+                  <button class="order__remove">
+                    <svg class="icon icon-trash">
+                      <use xlink:href="#icon-trash"></use>
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="cart__foot">
+        <div class="cart__label">Итого:</div>
+        <div class="cart__total">1200 грн</div><a class="cart__btn btn" href="checkout.html">Оформить заказ</a>
+      </div>
+    </div>
+    <!-- scripts-->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery.fancybox.min.js"></script>
+    <script src="js/lib/slick.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- svg sprite-->
+    <div style="display: none"><svg width="0" height="0">
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" id="icon-arrow">
+<path d="M5 5.85c.18 0 .358-.068.495-.205l4.3-4.3a.7.7 0 00-.99-.99L5 4.16 1.195.355a.7.7 0 00-.99.99l4.3 4.3A.698.698 0 005 5.85z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 21" id="icon-branch">
+<path d="M16.479 13.153a3.558 3.558 0 00-.754-.21c-.7-.112-2.276-.363-2.29-.363-1.631-.14-5.072.531-5.346.699-.055.042-.494.181-.686 0-.137-.14-.288-.336.082-.713.357-.364.494-.405 1.563-2.083.549-.838.796-1.034 1.234-1.258.81-.405 1.645-.699 2.468-.978.63-.21 2.056-1.678 2.056-1.678.823-.698 1.783-2.935 1.783-2.935.274-.699-.274-.699-1.097-.559-.302.056-.686.14-1.097.42-.877.6-2.865 2.082-2.879 2.096-.014.014-.822.699-1.645 2.097-.33.559-.781 1.523-1.042 2.082-.137.294-.302.56-.494.811l-1.74 2.25c-.289.434-.549.574-.563.574-.274.14-.411 0-.411-.56 0-.838.206-2.026 1.234-3.075 1-1.02 1.055-3.005 1.055-3.075.014-.084-.205-1.83 0-2.642.22-.88-.26-3.424-.644-3.76 0 0-.356-.293-.507-.293a.387.387 0 00-.315.154c-.604.782-1.783 3.2-1.92 4.459-.11.978-.137 1.537-.137 2.516 0 .978.069 3.424.548 3.913.453.462.165 2.712.138 2.922 0 .014-.275.559-.275.573-.137.28-.438.587-.685.978-.274.42-.521.979-1.097.979-.137 0-.192-.364-.137-.42 0 0 .274-.545.274-.559.055-.126.274-.699.137-1.537-.055-.336-.246-1.119-1.782-1.119-1.097 0-.85 1.817-.823 1.957.138.56.316.95.576 1.09.384.168.576.266.727.657.178.462.068 1.189-.343 1.887-.301.504-1.275 1.845-1.494 2.07-.014.013-.151.167-.151.335 0 .111.123.181.22.125.068-.042.123-.07.136-.098l.535-.545 1.577-1.887 3.016-2.795s.48-.35.822 0c.33.335 1.33.42 1.371.42 1.371.139 2.194.279 4.963-.155.384.014 4.36-1.803 4.36-2.222 0-.252-.233-.42-.521-.545zM11.653 6.29a9.65 9.65 0 011.097-.979c.288-.223.946-.726 1.371-1.118.069-.056.192-.181.411-.28.151-.07.288-.097.549-.14.41-.069.603-.097.685 0 .027.043.041.113 0 .28-.096.364-.315.574-.548.84-.425.488-.288.446-.549.698-.438.405-.658.363-.822.699-.041.084-.11.252-.274.42-.165.167-.247.139-.275.139-.082-.014-.123-.112-.137-.14-.096-.21.069-.335 0-.559-.04-.126-.15-.28-.274-.28-.123 0-.164.14-.411.42-.206.238-.343.391-.549.42-.164.027-.37-.029-.41-.14-.028-.098.095-.224.136-.28zm-9.048 8.526c-.041.112-.11.126-.274.28-.192.181-.192.28-.275.28-.123 0-.246-.224-.274-.42-.027-.21.055-.266 0-.42-.027-.055-.11-.14-.274-.279-.178-.154-.233-.182-.274-.28-.014-.027-.069-.167 0-.279.055-.098.164-.112.274-.14.082-.014.233-.042.411 0 .151.028.384.07.549.28.027.028.11.126.137.28.027.125 0 .167 0 .419.014.21.027.223 0 .28zm2.879-4.612c-.124 0-.233-.42-.274-.7a2.109 2.109 0 010-.698c.15-.965-.124-1.44 0-3.075.055-.7.096-.545.137-1.118.013-.308.013-.49.137-.7.096-.153.178-.195.274-.419.041-.083.041-.097.137-.419.069-.224.11-.335.137-.42.124-.307.165-.293.274-.558.165-.406.11-.601.275-.7.082-.041.205-.055.274 0 .096.085.027.294 0 .42-.096.42.068.517.137 1.258.068.755-.096.713 0 1.258.068.363.137.363.274.978.096.434.124.727.137.84.028.349.014.558 0 .838-.027.447-.082.517-.137.559-.15.098-.397 0-.548-.14-.083-.084-.124-.168-.274-.839-.083-.363-.11-.545-.275-.698-.054-.056-.178-.182-.274-.14-.055.028-.15.126 0 1.398.11.88.165.922.137 1.258-.013.181-.096.489-.274 1.118-.15.587-.206.699-.274.699zm9.94 3.843c-.028.182-.22.308-.412.42-.288.167-.466.181-.822.28-.398.111-.343.14-1.097.419-.425.153-.754.251-.823.28-.59.18-.918.139-3.153.139 0 0-.357 0-1.645-.14-.439-.042-.754-.084-.823-.28-.068-.181.151-.433.274-.558.384-.42.837-.573 1.234-.7.987-.32 1.48-.489 1.92-.558.233-.042.795-.07 1.919-.14 0 0 .452-.028 1.92 0 .3 0 .712.014 1.096.28.11.07.452.307.411.558z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 30" id="icon-cart">
+<path d="M25 25.933L23.282 6.588a.827.827 0 00-.822-.755h-3.534A5.931 5.931 0 0013 0a5.931 5.931 0 00-5.926 5.834H3.54a.822.822 0 00-.822.755L1 25.932c0 .025-.006.05-.006.074C.994 28.21 3.012 30 5.497 30h15.006c2.485 0 4.503-1.791 4.503-3.994 0-.024 0-.049-.006-.073zM13 1.655a4.274 4.274 0 014.27 4.178H8.73A4.274 4.274 0 0113 1.656zm7.503 26.688H5.497c-1.558 0-2.822-1.031-2.847-2.301L4.295 7.497h2.773v2.515c0 .46.368.829.828.829.46 0 .828-.369.828-.829V7.497h8.546v2.515c0 .46.368.829.828.829.46 0 .828-.369.828-.829V7.497H21.7l1.65 18.546c-.024 1.27-1.294 2.3-2.846 2.3z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" id="icon-close">
+<path d="M30 3l-3-3-12 12L3 0 0 3l12 12L0 27l3 3 12-12 12 12 3-3-12-12L30 3z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="icon-flower">
+<path d="M4.7 1.945l.898 2.165a1.933 1.933 0 01.805 0l.896-2.165a1.385 1.385 0 00-.13-1.32A1.385 1.385 0 006 0c-.478 0-.904.228-1.17.625a1.386 1.386 0 00-.13 1.32zm4.274-.573c-.469.094-.842.4-1.025.842L7.052 4.38c.227.147.42.341.568.568l2.166-.897c.442-.183.748-.556.842-1.025a1.386 1.386 0 00-.385-1.269 1.386 1.386 0 00-1.27-.385zm2.401 3.458a1.386 1.386 0 00-1.32-.13l-2.165.897a1.933 1.933 0 010 .805l2.165.897c.442.183.923.136 1.32-.13C11.772 6.904 12 6.478 12 6c0-.478-.228-.904-.625-1.17zm-.748 4.144a1.386 1.386 0 00-.84-1.025L7.62 7.052c-.147.227-.341.42-.568.568l.897 2.166c.183.442.556.748 1.025.842.468.093.93-.048 1.268-.385.338-.338.479-.8.385-1.27zM7.3 10.056L6.402 7.89a1.933 1.933 0 01-.805 0L4.7 10.056c-.183.44-.136.922.13 1.319.265.397.691.625 1.169.625.478 0 .904-.228 1.17-.625a1.39 1.39 0 00.13-1.32zm-4.274.571c.469-.093.842-.4 1.025-.84l.897-2.167a1.948 1.948 0 01-.568-.568l-2.166.897a1.386 1.386 0 00-.841 1.025c-.094.468.047.93.384 1.269.338.337.8.478 1.27.384zM.625 7.17a1.39 1.39 0 001.32.13l2.165-.897a1.933 1.933 0 010-.805L1.945 4.7a1.386 1.386 0 00-1.32.13A1.385 1.385 0 000 6c0 .478.228.904.625 1.17zm.747-4.144c.094.469.4.842.842 1.025l2.166.897c.147-.227.341-.42.568-.568l-.897-2.166a1.386 1.386 0 00-1.025-.842 1.385 1.385 0 00-1.269.385 1.39 1.39 0 00-.385 1.27zM6 7.23a1.23 1.23 0 100-2.46 1.23 1.23 0 000 2.46z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 19" id="icon-next">
+<path d="M1.523 11.023h32.264l-5.345 5.32a1.523 1.523 0 102.15 2.159l7.96-7.922.001-.002a1.525 1.525 0 000-2.156l-.001-.002-7.96-7.922a1.524 1.524 0 00-2.15 2.16l5.345 5.319H1.523a1.523 1.523 0 100 3.046z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 19" id="icon-prev">
+<path d="M37.477 7.977H5.213l5.345-5.32A1.523 1.523 0 108.408.499L.448 8.42l-.001.002a1.525 1.525 0 000 2.156l.001.002 7.96 7.922a1.524 1.524 0 002.15-2.16l-5.345-5.319h32.264a1.523 1.523 0 100-3.046z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="icon-search-small">
+<path d="M16.028 2.746c-3.661-3.661-9.62-3.661-13.282 0-3.66 3.662-3.66 9.62 0 13.282 3.26 3.26 8.339 3.61 11.997 1.064.077.364.254.712.537.995l5.332 5.332a1.983 1.983 0 002.806 0 1.981 1.981 0 000-2.806l-5.332-5.333a1.984 1.984 0 00-.995-.535c2.547-3.66 2.198-8.737-1.063-11.999zm-1.684 11.599c-2.733 2.733-7.182 2.733-9.914 0a7.022 7.022 0 010-9.915c2.732-2.732 7.18-2.732 9.914 0a7.019 7.019 0 010 9.915z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" id="icon-search">
+<path d="M29.658 28.009l-7.321-7.321a12.568 12.568 0 002.916-8.061C25.253 5.664 19.59 0 12.627 0 5.664 0 0 5.664 0 12.627c0 6.962 5.664 12.626 12.627 12.626 3.061 0 5.872-1.096 8.06-2.916l7.322 7.321a1.162 1.162 0 001.65 0 1.166 1.166 0 000-1.65zM2.333 12.627c0-5.676 4.618-10.294 10.294-10.294S22.92 6.95 22.92 12.627 18.303 22.92 12.627 22.92c-5.676 0-10.294-4.617-10.294-10.293z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" id="icon-trash">
+<path d="M1.334 17.778A2.22 2.22 0 003.556 20h8.89a2.222 2.222 0 002.221-2.222V4.444H1.334v13.334zM11.887 1.111L10.777 0H5.22L4.11 1.111H.22v2.222h15.556V1.111h-3.889z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" id="icon-user">
+<path d="M15 0c-4.362 0-7.91 3.549-7.91 7.91 0 4.362 3.548 7.91 7.91 7.91s7.91-3.548 7.91-7.91S19.362 0 15 0zm0 14.063A6.16 6.16 0 018.848 7.91 6.16 6.16 0 0115 1.758a6.16 6.16 0 016.152 6.152A6.16 6.16 0 0115 14.062zm2.451 3.574H12.55c-4.055 0-8.057 1.872-10.733 5.886V30h26.368v-6.477c-2.672-4.008-6.673-5.886-10.733-5.886zm8.975 10.605H3.574v-4.181a10.94 10.94 0 018.975-4.666h4.902a10.94 10.94 0 018.975 4.666v4.181z"></path>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 33" id="icon-play">
+<path d="M46.447 5.284c-.54-2.008-2.123-3.591-4.131-4.132C38.648.148 23.975.148 23.975.148s-14.672 0-18.34.966c-1.969.54-3.591 2.162-4.131 4.17C.538 8.952.538 16.558.538 16.558s0 7.645.965 11.274c.541 2.008 2.123 3.591 4.132 4.132 3.706 1.004 18.341 1.004 18.341 1.004s14.672 0 18.34-.966c2.008-.54 3.591-2.123 4.132-4.131.965-3.668.965-11.274.965-11.274s.039-7.645-.966-11.313zM19.304 23.586V9.531l12.201 7.027-12.201 7.027z"></path>
+</symbol>
+</svg>
+    </div>
+  </body>
+</html>

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\CartComposer;
+use App\Http\ViewComposers\CategoryComposer;
 use App\Http\ViewComposers\FooterComposer;
 use App\Http\ViewComposers\HeaderComposer;
 use App\Http\ViewComposers\InfoBlockComposer;
@@ -23,6 +25,12 @@ class ComposerServiceProvider extends ServiceProvider
         View::composer('partials.langs', LangsComposer::class);
         View::composer('partials.breadcrumbs', 'App\Http\ViewComposers\BreadcrumbsComposer');
         View::composer('partials.info_blocks.info_blocks', InfoBlockComposer::class);
+        View::composer([
+            'products.partials.catalog_sidebar',
+            'products.partials.catalog_mobile',
+            ], CategoryComposer::class);
+
+        View::composer('popups.cart', CartComposer::class);
     }
 
     /**
