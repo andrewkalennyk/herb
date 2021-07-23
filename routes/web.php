@@ -24,5 +24,9 @@ Route::group(
         );
 
         Route::post('/order', 'OrderController@doOrder')->name('order');
+
+        Route::post('/login-profile', 'LoginController@authenticate')->name('profile-auth');
+
+        Route::get('profile', 'ProfileController@showProfile')->name('profile');
     }
 );

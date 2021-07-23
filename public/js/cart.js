@@ -20,6 +20,10 @@ let Cart = {
             Cart.changeAmount(this, 'incr');
         });
 
+        $('.add_to_cart_catalog_btn').click(function () {
+            Cart.addToCartCatalog(this);
+        });
+
         Cart.cartPopupEvents();
     },
 
@@ -73,6 +77,33 @@ let Cart = {
 
                     $(el).hide();
                     $('.cart_value').show();
+
+                    Cart.updateCartPopup(response);
+                }
+            },
+            error: function (error) {}
+        });
+    },
+
+    addToCartCatalog: function (el) {
+        const productId = $(el).attr('data-product-id'),
+            priceId = $(el).attr('data-price-id');
+
+        jQuery.ajax({
+            data: {
+                priceId : priceId,
+                productId: productId,
+            },
+            type: "POST",
+            url: Cart.langPrefix + '/cart/add-to-cart',
+            cache: false,
+            dataType: "json",
+            success: function (response) {
+                if (response.status) {
+                    Cart.content = response.carContent;
+
+                    $(el).hide();
+                    $(el).next().show();
 
                     Cart.updateCartPopup(response);
                 }

@@ -26,15 +26,34 @@ class Product extends BaseModel
 
     public function scopeProductDefaultPrices($query)
     {
-        return $query->join('product_prices', function ($join) {
+        return $query
+            ->select('products.*',
+                'product_prices.id as product_price_id',
+                'product_prices.unit_type',
+                'product_prices.unit_value',
+                'product_prices.old_price',
+                'product_prices.price',
+                'product_prices.is_default'
+            )->join('product_prices', function ($join) {
             $join->on('product_prices.product_id', '=', 'products.id')
                     ->where('is_default', 1);
             });
+
     }
 
     public static function scopeActive($query)
     {
         return $query->where('products.is_active', '1');
+    }
+
+    public static function scopeHit($query)
+    {
+        return $query->where('products.is_hit', '1');
+    }
+
+    public static function scopeNew($query)
+    {
+        return $query->where('products.is_new', '1');
     }
 
     public static function scopeByCategory($query, $category = null)

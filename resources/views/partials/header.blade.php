@@ -14,10 +14,19 @@
                 @include('partials.menu_header')
 
                 <div class="header__group">
-                    <a class="header__link" data-fancybox data-src="#login" data-touch="false" href="javascript:;">
-                        <svg class="icon icon-user">
-                            <use xlink:href="#icon-user"></use>
-                        </svg></a>
+                    @if(!$user)
+                        <a class="header__link" data-fancybox data-src="#login" data-touch="false" href="javascript:;">
+                            <svg class="icon icon-user">
+                                <use xlink:href="#icon-user"></use>
+                            </svg>
+                        </a>
+                    @else
+                        <a class="header__link" data-touch="false" href="{{route('profile')}}">
+                            <svg class="icon icon-user">
+                                <use xlink:href="#icon-user"></use>
+                            </svg>
+                        </a>
+                    @endif
                     <!-- select-->
                     @include('partials.langs')
                 </div>

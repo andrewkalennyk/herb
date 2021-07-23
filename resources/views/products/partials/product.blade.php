@@ -24,15 +24,7 @@
             {{__t('Сообщить о наличии')}}
         </a>
     @else
-        <a class="product__btn btn"
-           {{--data-product-id="{{$product->id}}"
-           data-price-id="{{$product->price->id}}"--}}
-           href="javascript:void(0)">
-            <svg class="icon icon-branch">
-                <use xlink:href="#icon-branch"></use>
-            </svg>
-            {{__t('Купить')}}
-        </a>
+        @include('products.partials.buy_btn_catalog')
     @endif
 
 

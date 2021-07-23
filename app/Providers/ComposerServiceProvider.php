@@ -8,6 +8,7 @@ use App\Http\ViewComposers\FooterComposer;
 use App\Http\ViewComposers\HeaderComposer;
 use App\Http\ViewComposers\InfoBlockComposer;
 use App\Http\ViewComposers\LangsComposer;
+use App\Http\ViewComposers\ProductComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,7 +21,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('partials.menu_header', HeaderComposer::class);
+        View::composer('partials.header', HeaderComposer::class);
         View::composer('partials.menu_footer', FooterComposer::class);
         View::composer('partials.langs', LangsComposer::class);
         View::composer('partials.breadcrumbs', 'App\Http\ViewComposers\BreadcrumbsComposer');
@@ -31,6 +32,7 @@ class ComposerServiceProvider extends ServiceProvider
             ], CategoryComposer::class);
 
         View::composer('popups.cart', CartComposer::class);
+        View::composer('products.partials.product', ProductComposer::class);
     }
 
     /**

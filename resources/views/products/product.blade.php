@@ -111,9 +111,4 @@
             }
         })
     </script>
-
-    <script src="/js/cart.js"></script>
-    <script>
-        Cart.lang = '{{app()->getLocale() !== 'ru' ? app()->getLocale() : ''}}'
-    </script>
 @stop

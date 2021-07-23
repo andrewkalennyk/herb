@@ -60,6 +60,7 @@
 </div>
 
 @include('popups.cart')
+@include('popups.login')
 
 <!-- scripts-->
 <script src="/js/lib/jquery.min.js"></script>
@@ -67,6 +68,12 @@
 <script src="/js/lib/jquery.validate.min.js"></script>
 <script src="/js/lib/slick.min.js"></script>
 <script src="/js/app.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/cart.js"></script>
+
+<script>
+    Cart.lang = '{{app()->getLocale() !== 'ru' ? app()->getLocale() : ''}}'
+</script>
 
 <script>
     $.ajaxSetup({

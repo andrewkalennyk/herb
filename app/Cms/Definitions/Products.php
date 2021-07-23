@@ -31,6 +31,8 @@ class Products extends Resource
                 Checkbox::make('Активность', 'is_active')->filter(),
                 Froala::make('Состав', 'composition')->language()->onlyForm(),
                 Text::make('Url', 'slug')->onlyForm(),
+                Checkbox::make('Новые', 'is_new')->onlyForm(),
+                Checkbox::make('Хит', 'is_hit')->onlyForm(),
             ],
             'Медиа' => [
                 Image::make('Картинка', 'picture'),
