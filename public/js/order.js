@@ -8,6 +8,11 @@ let Order = {
             const form = $(this).closest('form');
             $(form).submit();
         });
+
+        $('.btn_black').click(function () {
+            const form = $(this).closest('form');
+            $(form).submit();
+        });
     },
 
     orderForm: function () {

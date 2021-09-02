@@ -2,12 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Events\CreateOrderCartEvent;
-use App\Models\Order;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Foundation\Http\FormRequest;
 
-class OrderRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,15 +24,8 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name'    => 'required',
-            'last_name'     => 'required',
-            'phone'         => 'required',
+            'email'    => 'required|email',
+            'password'     => 'required',
         ];
-    }
-
-    public function apply()
-    {
-        return (bool)event(new CreateOrderCartEvent(Order::create($this->all())));
-
     }
 }

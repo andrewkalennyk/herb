@@ -3,11 +3,20 @@
 namespace App\Providers;
 
 use App\Events\CreateOrderCartEvent;
+use App\Events\GeneratePromoEvent;
+use App\Events\RepeatOrderEvent;
+use App\Events\ResetPasswordCreatedEvent;
+use App\Events\ResetPasswordEvent;
+use App\Listeners\CreateActivation;
 use App\Listeners\CreateOrderCart;
+use App\Listeners\GeneratePromoCode;
+use App\Listeners\RepeatOrder;
+use App\Listeners\ResetPassword;
+use App\Listeners\ResetPasswordSendMail;
+use App\Listeners\SendOrderAdminEmail;
+use App\Listeners\SendRegisterEmail;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,11 +27,29 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         Registered::class => [
-            SendEmailVerificationNotification::class,
+            CreateActivation::class,
+            SendRegisterEmail::class,
+        ],
+
+        ResetPasswordEvent::class => [
+            ResetPassword::class
+        ],
+
+        ResetPasswordCreatedEvent::class => [
+            ResetPasswordSendMail::class
         ],
 
         CreateOrderCartEvent::class => [
-            CreateOrderCart::class
+            CreateOrderCart::class,
+            SendOrderAdminEmail::class,
+        ],
+
+        RepeatOrderEvent::class => [
+            RepeatOrder::class
+        ],
+
+        GeneratePromoEvent::class => [
+            GeneratePromoCode::class
         ]
     ];
 

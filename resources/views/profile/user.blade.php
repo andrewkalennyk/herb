@@ -7,18 +7,14 @@
     <div class="profile">
         <div class="profile__title title">{{__t('Личный кабинет')}}</div>
         <!-- nav-->
-        <div class="profile__nav nav">
-            <div class="nav__option">
-                <a class="active" href="javascript:void(0)">{{__t('Личные данные')}}</a></div>
-            <div class="nav__option"><a href="javascript:void(0)">{{__t('Мои заказы')}}</a></div>
-            <div class="nav__option"><a href="javascript:void(0)">{{__t('Программа лояльности')}}</a></div>
-        </div>
+        @include('profile.partials.profile_nav')
+
         <div class="profile__container">
             <!-- account-->
             <div class="account">
                 <div class="account__col">
                     <div class="account__preview">
-                        <img src="img/content/image-7.jpg" alt="Avatar">
+                        <img src="/img/content/image-7.jpg" alt="Avatar">
                     </div>
                     <div class="account__upload">{{__t('Изменить фото')}}
                         <input type="file" name="image">

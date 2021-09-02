@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Order;
+
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[a-z0-9-]+');
 Route::pattern('category', '[a-z0-9-]+');
@@ -24,9 +26,21 @@ Route::group(
         );
 
         Route::post('/order', 'OrderController@doOrder')->name('order');
+        Route::post('/repeat-order', 'OrderController@doRepeatOrder')->name('repeat-order')->middleware('profile');
+        Route::post('/generate-promo-code', 'ProfileController@doGeneratePromoCode')->name('generate_promo_code')->middleware('profile');
 
-        Route::post('/login-profile', 'LoginController@authenticate')->name('profile-auth');
 
-        Route::get('profile', 'ProfileController@showProfile')->name('profile');
+        Route::group(
+            ['prefix' => 'profile'],
+            function () {
+                Route::get('/', 'ProfileController@showProfile')->name('profile')->middleware('profile');
+                Route::get('/orders', 'ProfileController@showOrdersProfile')->name('profile-orders')->middleware('profile');
+                Route::get('/loyalty', 'ProfileController@showLoyaltyProfile')->name('profile-loyalty')->middleware('profile');
+                Route::post('/login', 'Auth\LoginController@authenticate')->name('profile-login');
+                Route::post('/register', 'Auth\RegisterController@register')->name('profile-register');
+                Route::post('/reset', 'Auth\RegisterController@reset')->name('profile-reset');
+                Route::get('/activating' , 'Auth\RegisterController@activate')->name('profile-activate');
+            });
+
     }
 );

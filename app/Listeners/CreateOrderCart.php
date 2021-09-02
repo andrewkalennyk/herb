@@ -45,5 +45,7 @@ class CreateOrderCart
         foreach ($orderProducts as $product) {
             OrderProduct::create($product);
         }
+
+        Cart::destroy();
     }
 }

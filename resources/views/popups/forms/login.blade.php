@@ -1,5 +1,5 @@
 <!-- form authorization-->
-<form class="auth__form js-auth-form-login login-form" action data-action="{{route('profile-auth')}}">
+<form class="auth__form js-auth-form-login login-form" action data-action="{{route('profile-login')}}">
     <div class="auth__field field">
         <div class="field__label">Email</div>
         <div class="field__wrap">

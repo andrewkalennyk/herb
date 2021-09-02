@@ -111,7 +111,7 @@ class Product extends BaseModel
 
     public function getUrl()
     {
-        $parentCategorySlug = $this->category->parent->slug;
+        $parentCategorySlug = $this->category ? $this->category->parent->slug : '';
         $categorySlug = $this->category->slug;
         return route('product', [$parentCategorySlug, $categorySlug, $this->slug]);
     }
