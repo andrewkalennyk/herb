@@ -6,7 +6,7 @@
         @if($product->is_sold_out)
             <img class="product__badge" src="/img/sold-out.svg" alt="sold-out">
         @endif
-        {!!  $page->getImg("611", "654") !!}
+        {!!  $product->getImg("611", "654") !!}
     </a>
     <a class="product__title" href="{{$product->getUrl()}}">{{$product->t('title')}}</a>
     <div class="product__details">{{$product->unit_value}} {{__t($product->unit_type)}}</div>

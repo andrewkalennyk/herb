@@ -111,9 +111,14 @@ class Product extends BaseModel
 
     public function getUrl()
     {
-        $parentCategorySlug = $this->category ? $this->category->parent->slug : '';
-        $categorySlug = $this->category->slug;
-        return route('product', [$parentCategorySlug, $categorySlug, $this->slug]);
+        if ($this->category) {
+            $parentCategorySlug = $this->category ? $this->category->parent->slug : '';
+            $categorySlug = $this->category->slug;
+            return route('product', [$parentCategorySlug, $categorySlug, $this->slug]);
+        } else {
+            return '';
+        }
+
     }
 
     public function scopeOrderTitle($query, $value) {
