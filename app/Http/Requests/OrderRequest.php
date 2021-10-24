@@ -32,10 +32,4 @@ class OrderRequest extends FormRequest
             'phone'         => 'required',
         ];
     }
-
-    public function apply()
-    {
-        return (bool)event(new CreateOrderCartEvent(Order::create($this->all())));
-
-    }
 }

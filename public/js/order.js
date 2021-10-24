@@ -9,9 +9,13 @@ let Order = {
             $(form).submit();
         });
 
-        $('.btn_black').click(function () {
-            const form = $(this).closest('form');
-            $(form).submit();
+        $('.use_promo').click(function () {
+            $('.promo_code_block').toggle();
+        });
+
+        $('.promo_code_btn').click(function (e) {
+            e.preventDefault();
+            Order.usePromo();
         });
     },
 
@@ -44,6 +48,32 @@ let Order = {
 
                     }
                 });
+            }
+        });
+    },
+    usePromo: function () {
+        jQuery.ajax({
+            data: {
+                promo_code: $('.promo_code_block input[name="promo_code"]').val()
+            },
+            type: "POST",
+            url: $('.promo_code_btn').data('url'),
+            cache: false,
+            dataType: "json",
+            success: function (response) {
+                if (response.status) {
+                    $('#total_price').addClass('cross');
+                    $('.new_total').html(response.total);
+                    $('#discount_total_price').show();
+                }
+            },
+            error: function (error) {
+                var errors = error.responseJSON.errors;
+                var errorMessage = '';
+                $.each(errors, function (key, value) {
+                    errorMessage += value + '<br>';
+                });
+
             }
         });
     }

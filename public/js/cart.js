@@ -4,6 +4,8 @@ let Cart = {
 
     lang: '',
     langPrefix: '',
+    isCheckout: false,
+    qty: 0,
 
     init: function () {
         Cart.langPrefix = Cart.lang ? '/' + Cart.lang : '';
@@ -12,11 +14,11 @@ let Cart = {
             Cart.addToCart(this);
         });
 
-        $('.cart_value .value__minus').click(function () {
+        $('.cart_value .value__minus, .checkout_value .value__minus').click(function () {
             Cart.changeAmount(this, 'decr');
         });
 
-        $('.cart_value .value__plus').click(function () {
+        $('.cart_value .value__plus, .checkout_value .value__plus').click(function () {
             Cart.changeAmount(this, 'incr');
         });
 
@@ -79,6 +81,9 @@ let Cart = {
                     $('.cart_value').show();
 
                     Cart.updateCartPopup(response);
+
+                    Cart.qty = response.qty;
+                    Cart.updateHeaderCounter();
                 }
             },
             error: function (error) {}
@@ -106,6 +111,9 @@ let Cart = {
                     $(el).next().show();
 
                     Cart.updateCartPopup(response);
+
+                    Cart.qty = response.qty;
+                    Cart.updateHeaderCounter();
                 }
             },
             error: function (error) {}
@@ -142,6 +150,9 @@ let Cart = {
                         $(cartValue).val(qty);
                     }
 
+                    Cart.qty = response.qty;
+                    Cart.updateHeaderCounter();
+
                 }
             },
             error: function (error) {}
@@ -174,6 +185,9 @@ let Cart = {
                         $(cartValue).val(qty);
                     }
 
+                    Cart.qty = response.qty;
+                    Cart.updateHeaderCounter();
+
                 }
             },
             error: function (error) {}
@@ -197,6 +211,9 @@ let Cart = {
                     Cart.updateCartPopup(response);
                     $('.select-unit-price-option[data-rowId="'+rowId+'"]').attr('data-rowId', '');
                     $(el).closest('tr').remove();
+
+                    Cart.qty = response.qty;
+                    Cart.updateHeaderCounter();
                 }
             },
             error: function (error) {}
@@ -204,6 +221,16 @@ let Cart = {
 
 
     },
+
+    updateHeaderCounter: function () {
+        var headerCount = $('.header__counter');
+        if (Cart.qty > 0) {
+            $(headerCount).html(Cart.qty);
+            $(headerCount).show();
+        } else {
+            $(headerCount).hide();
+        }
+    }
 
 };
 

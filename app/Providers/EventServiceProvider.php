@@ -7,9 +7,15 @@ use App\Events\GeneratePromoEvent;
 use App\Events\RepeatOrderEvent;
 use App\Events\ResetPasswordCreatedEvent;
 use App\Events\ResetPasswordEvent;
+use App\Events\UpdateNpEvent;
 use App\Listeners\CreateActivation;
 use App\Listeners\CreateOrderCart;
 use App\Listeners\GeneratePromoCode;
+use App\Listeners\Np\UpdateCities;
+use App\Listeners\Np\UpdateRegions;
+use App\Listeners\Np\UpdateStreets;
+use App\Listeners\Np\UpdateWareHouses;
+use App\Listeners\Np\UpdateWareHousesTypes;
 use App\Listeners\RepeatOrder;
 use App\Listeners\ResetPassword;
 use App\Listeners\ResetPasswordSendMail;
@@ -50,6 +56,14 @@ class EventServiceProvider extends ServiceProvider
 
         GeneratePromoEvent::class => [
             GeneratePromoCode::class
+        ],
+
+        UpdateNpEvent::class => [
+            //UpdateRegions::class,
+            //UpdateCities::class,
+            //UpdateWareHousesTypes::class,
+            //UpdateStreets::class,
+            UpdateWareHouses::class
         ]
     ];
 

@@ -185,17 +185,15 @@ if (isTouchDevice()) {
     carousel.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false,
+      prevArrow: prevArrow,
+      nextArrow: nextArrow,
       fade: true,
       asNavFor: thumbs,
       responsive: [{
         breakpoint: 1023,
         settings: {
           fade: false,
-          dots: true,
-          arrows: true,
-          prevArrow: prevArrow,
-          nextArrow: nextArrow
+          dots: true
         }
       }]
     });
@@ -206,6 +204,51 @@ if (isTouchDevice()) {
       focusOnSelect: true,
       prevArrow: prevArrow,
       nextArrow: nextArrow
+    });
+  }
+})(); // account
+
+
+(function () {
+  var account = $('.js-account');
+
+  if (account.length) {
+    var btnChange = account.find('.js-account-change'),
+        btnCancel = account.find('.js-account-cancel'),
+        inputs = account.find('input[readonly]'),
+        actions = account.find('.js-account-actions'),
+        actionsSave = account.find('.js-account-actions-save');
+    btnChange.on('click', function () {
+      actions.hide();
+      actionsSave.show();
+      inputs.attr('readonly', false);
+    });
+    btnCancel.on('click', function () {
+      actions.show();
+      actionsSave.hide();
+      inputs.attr('readonly', true);
+    });
+  }
+})(); // field
+
+
+(function () {
+  var fields = $('.js-field');
+
+  if (fields.length) {
+    fields.each(function () {
+      var field = $(this),
+          toggle = field.find('.js-field-toggle'),
+          input = field.find('input');
+      toggle.on('click', function () {
+        if (!$(this).hasClass('active')) {
+          $(this).addClass('active');
+          input.attr('type', 'text');
+        } else {
+          $(this).removeClass('active');
+          input.attr('type', 'password');
+        }
+      });
     });
   }
 })();

@@ -23,6 +23,11 @@ class Promocode extends BaseModel
         return $query->where('user_id', $userId);
     }
 
+    public function scopeIsNotUsed($query)
+    {
+        return $query->where('is_used', 0);
+    }
+
     public static function checkUnique($code)
     {
         return (bool)Promocode::code($code)->first();

@@ -58,54 +58,9 @@
                         <div class="order">
                             <table>
                                 <tbody>
-                                <tr>
-                                    <td><a class="order__preview"><img src="img/content/product-1.jpg" alt="Product 1"/></a></td>
-                                    <td><a class="order__title title" href="#">Название товара</a>
-                                        <div class="order__param">100г.</div>
-                                    </td>
-                                    <td>
-                                        <!-- value-->
-                                        <div class="value">
-                                            <button class="value__minus" type="button">-</button>
-                                            <input class="value__input" type="text" value="1"/>
-                                            <button class="value__plus" type="button">+</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="order__price">350&nbsp;грн</div>
-                                    </td>
-                                    <td>
-                                        <button class="order__remove">
-                                            <svg class="icon icon-trash">
-                                                <use xlink:href="#icon-trash"></use>
-                                            </svg>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a class="order__preview"><img src="img/content/product-1.jpg" alt="Product 1"/></a></td>
-                                    <td><a class="order__title title" href="#">Название товара</a>
-                                        <div class="order__param">100г.</div>
-                                    </td>
-                                    <td>
-                                        <!-- value-->
-                                        <div class="value">
-                                            <button class="value__minus" type="button">-</button>
-                                            <input class="value__input" type="text" value="1"/>
-                                            <button class="value__plus" type="button">+</button>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="order__price">350&nbsp;грн</div>
-                                    </td>
-                                    <td>
-                                        <button class="order__remove">
-                                            <svg class="icon icon-trash">
-                                                <use xlink:href="#icon-trash"></use>
-                                            </svg>
-                                        </button>
-                                    </td>
-                                </tr>
+                                    @foreach($cart as $product)
+                                        @include('order.partials.product')
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -177,14 +132,17 @@
                                 </div>
                                 <div class="total__cell">
                                     <div class="total__short">
-                                        <a class="btn btn_black" href="javascript:void(0)">{{__t('Использовать')}}</a>
+                                        <a class="btn btn_black promo_code_btn" data-url="{{route('use-promo')}}" href="javascript:void(0)">{{__t('Использовать')}}</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="total__row total__row_info">
                                 <div class="total__cell">{{__t('К оплате')}}</div>
                                 <div class="total__cell">
-                                    <div class="total__price">{{$total}}&nbsp;{{__t('грн')}}</div>
+                                    <div class="total__price {{$discount > 0 ? 'cross' : '' }}" id="total_price">{{$total}}&nbsp;{{__t('грн')}}</div>
+                                    <div class="total__price" id="discount_total_price" style="{{$discount > 0 ? '' : 'display: none' }}">
+                                        <span class="new_total">{{$discountTotal}}</span>{{__t('грн')}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -199,4 +157,10 @@
 
 @section('after_script')
     <script src="/js/order.js"></script>
+
+    <style>
+        .cross {
+            text-decoration: line-through;
+        }
+    </style>
 @stop

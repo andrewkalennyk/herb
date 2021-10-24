@@ -70,6 +70,7 @@
 <script src="/js/app.js"></script>
 <script src="/js/login.js"></script>
 <script src="/js/cart.js"></script>
+<script src="/js/search.js"></script>
 
 <script>
     Cart.lang = '{{app()->getLocale() !== 'ru' ? app()->getLocale() : ''}}'

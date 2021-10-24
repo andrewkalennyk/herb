@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Home page</title>
+    <title>Search page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
@@ -45,7 +45,7 @@
     <!-- outer-->
     <div class="outer">
       <!-- header-->
-      <header class="header js-header header_home">
+      <header class="header js-header">
         <div class="header__center center">
           <button class="header__burger js-header-burger"><svg viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="20" height="1.5" rx="0.75"/>
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="header__close js-header-close"></div>
-          </div><a class="header__logo" href="/"><img src="img/herbarius-white.svg" alt="Herbarius"></a>
+          </div><a class="header__logo" href="/"><img src="img/herbarius.svg" alt="Herbarius"></a>
           <div class="header__menu">
             <button class="header__link js-header-link">
               <svg class="icon icon-search">
@@ -82,8 +82,7 @@
             <form class="header__search js-header-search" action="search.html">
               <input type="search" name="search">
               <div class="header__results"><a href="#">Название товара</a><a href="#">Название товара</a><a href="#">Название товара</a><a href="#">Название товара</a><a href="#">Название товара</a><a href="#">Название товара</a></div>
-            </form>
-              <a class="header__link" data-fancybox data-src="#cart" data-touch="false" href="javascript:;">
+            </form><a class="header__link" data-fancybox data-src="#cart" data-touch="false" href="javascript:;">
               <svg class="icon icon-cart">
                 <use xlink:href="#icon-cart"></use>
               </svg>
@@ -93,198 +92,84 @@
       </header>
       <!-- container-->
       <div class="container">
-        <!-- hero-->
-        <div class="hero" style="background-image: url(img/hero.jpg)">
-          <div class="hero__center center">
-            <div class="hero__logo"><img src="img/herbarius-white.svg" alt="Herbarius"></div>
-            <div class="hero__slogan"><img src="img/slogan.png" alt="Slogan"></div>
-          </div>
-        </div>
-        <!--categories-->
-        <div class="categories">
-          <!-- center-->
-          <div class="center">
-            <!-- category-->
-            <div class="category js-category">
-              <div class="category__title title">Новинки</div>
-              <div class="category__carousel js-category-carousel">
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-1.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-2.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-3.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-4.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-1.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-2.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-              </div>
-              <!-- slick nav-->
-              <div class="slick-nav">
-                <button class="slick-nav__prev js-slick-nav-prev">
-                  <svg class="icon icon-prev">
-                    <use xlink:href="#icon-prev"></use>
-                  </svg>
-                </button>
-                <div class="slick-nav__dots js-slick-nav-dots"></div>
-                <button class="slick-nav-next js-slick-nav-next">
-                  <svg class="icon icon-next">
-                    <use xlink:href="#icon-next"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <!-- category-->
-            <div class="category js-category">
-              <div class="category__title title">Хиты продаж</div>
-              <div class="category__carousel js-category-carousel">
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-1.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-2.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-3.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-4.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-1.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-                <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-2.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
-                  <div class="product__details">100г.</div>
-                  <div class="product__price">350 грн
-                  </div><a class="product__btn btn" href="#">
-                    <svg class="icon icon-branch">
-                      <use xlink:href="#icon-branch"></use>
-                    </svg>Купить</a>
-                </div>
-              </div>
-              <!-- slick nav-->
-              <div class="slick-nav">
-                <button class="slick-nav__prev js-slick-nav-prev">
-                  <svg class="icon icon-prev">
-                    <use xlink:href="#icon-prev"></use>
-                  </svg>
-                </button>
-                <div class="slick-nav__dots js-slick-nav-dots"></div>
-                <button class="slick-nav-next js-slick-nav-next">
-                  <svg class="icon icon-next">
-                    <use xlink:href="#icon-next"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- collection-->
-        <div class="collection js-collection">
-          <div class="collection__carousel js-collection-carousel"><a class="collection__item" href="#">
-              <div class="collection__preview"><img srcset="img/content/sea-power-inside@2x.jpg 2x" src="img/content/sea-power-inside.jpg" alt="Сила моря внутри…"></div>
-              <div class="collection__center center">
-                <div class="collection__title">Сила моря внутри…</div>
-              </div></a><a class="collection__item" href="#">
-              <div class="collection__preview"><img srcset="img/content/sea-power-inside@2x.jpg 2x" src="img/content/sea-power-inside.jpg" alt="Сила моря внутри…"></div>
-              <div class="collection__center center">
-                <div class="collection__title">Сила моря внутри…</div>
-              </div></a><a class="collection__item" href="#">
-              <div class="collection__preview"><img srcset="img/content/sea-power-inside@2x.jpg 2x" src="img/content/sea-power-inside.jpg" alt="Сила моря внутри…"></div>
-              <div class="collection__center center">
-                <div class="collection__title">Сила моря внутри…</div>
-              </div></a></div>
-          <!-- slick nav-->
-          <div class="slick-nav">
-            <button class="slick-nav__prev js-slick-nav-prev">
-              <svg class="icon icon-prev">
-                <use xlink:href="#icon-prev"></use>
-              </svg>
-            </button>
-            <div class="slick-nav__dots js-slick-nav-dots"></div>
-            <button class="slick-nav-next js-slick-nav-next">
-              <svg class="icon icon-next">
-                <use xlink:href="#icon-next"></use>
-              </svg>
-            </button>
-          </div>
-        </div>
         <!-- center-->
         <div class="center">
-          <!-- content-->
-          <div class="content">
-            <div class="content__decor"><img src="img/decor.svg" alt="Decor"></div>
-            <div class="content__title title">О HERBARIUS</div>
-            <div class="content__row">
-              <div class="content__col">
-                <h3>Подзаголовок</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <!-- search-->
+          <div class="search">
+            <h1 class="search__title title">Результаты поиска</h1>
+            <form class="search__form" action>
+              <input type="search" value="Название товара" placeholder="Введите название товара">
+              <button type="submit">
+                <svg class="icon icon-search-small">
+                  <use xlink:href="#icon-search-small"></use>
+                </svg>
+              </button>
+            </form>
+            <div class="search__request"><strong>Вы искали:</strong> Название товара</div>
+            <div class="search__products">
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-1.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
               </div>
-              <div class="content__col">
-                <div class="content__figure"><img src="img/content/image-1.jpg" alt="Image"></div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-2.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
+              </div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-3.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
+              </div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-4.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
+              </div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-1.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
+              </div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-2.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
+              </div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-3.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
+              </div>
+              <div class="product"><a class="product__preview" href="/product.html"><img src="img/content/product-4.jpg" alt="Preview"/></a><a class="product__title" href="/product.html">Название товара</a>
+                <div class="product__details">100г.</div>
+                <div class="product__price">350 грн
+                </div><a class="product__btn btn" href="#">
+                  <svg class="icon icon-branch">
+                    <use xlink:href="#icon-branch"></use>
+                  </svg>Купить</a>
               </div>
             </div>
           </div>
@@ -528,7 +413,7 @@
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/jquery.fancybox.min.js"></script>
     <script src="js/lib/slick.min.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="js/app.js"></script>
     <!-- svg sprite-->
     <div style="display: none"><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" id="icon-arrow">
