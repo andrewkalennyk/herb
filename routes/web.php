@@ -16,6 +16,8 @@ Route::group(
 
         Route::get('/checkout', 'OrderController@showCheckout')->name('checkout');
 
+        Route::any('/search', 'SearchController@doSearch')->name('search');
+
         Route::group(
             ['prefix' => 'cart'],
             function () {
@@ -28,6 +30,7 @@ Route::group(
         Route::post('/order', 'OrderController@doOrder')->name('order');
         Route::post('/repeat-order', 'OrderController@doRepeatOrder')->name('repeat-order')->middleware('profile');
         Route::post('/generate-promo-code', 'ProfileController@doGeneratePromoCode')->name('generate_promo_code')->middleware('profile');
+        Route::post('/use-promo-code', 'OrderController@doUseCode')->name('use-promo');
 
 
         Route::group(

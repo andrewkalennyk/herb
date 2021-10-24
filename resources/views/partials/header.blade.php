@@ -46,13 +46,18 @@
                     <use xlink:href="#icon-search"></use>
                 </svg>
             </button>
-            <form class="header__search js-header-search" action="search.html">
-                <input type="search" name="search">
-            </form>
+
+            @include('partials.header_search')
+
             <a class="header__link" data-fancybox data-src="#cart" data-touch="false" href="javascript:;">
                 <svg class="icon icon-cart">
                     <use xlink:href="#icon-cart"></use>
                 </svg>
+                <div class="header__counter"
+                     style="{{\Gloudemans\Shoppingcart\Facades\Cart::count() == 0 ? 'display: none' : ''}}"
+                >
+                    {{\Gloudemans\Shoppingcart\Facades\Cart::count()}}
+                </div>
             </a>
         </div>
     </div>
