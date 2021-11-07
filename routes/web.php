@@ -46,5 +46,8 @@ Route::group(
                 Route::get('/activating' , 'Auth\RegisterController@activate')->name('profile-activate');
             });
 
+        Route::get('auth/facebook', 'Auth\FacebookController@facebookRedirect');
+        Route::get('auth/facebook/callback', 'Auth\FacebookController@loginWithFacebook');
+
     }
 );

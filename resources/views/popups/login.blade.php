@@ -18,8 +18,8 @@
             <div class="enter">
                 <div class="enter__title title title_sm">{{__t('Войти как пользователь')}}</div>
                 <div class="enter__wrap">
-                    <a class="enter__link" href="#">
-                        <img src="/img/facebook-color.svg" alt="Facebook">Facebook</a>
+                    <a class="enter__link" href="{{ url('auth/facebook') }}">
+                        <img src="{{asset('/img/facebook-color.svg')}}" alt="Facebook">Facebook</a>
                     <a class="enter__link" href="#">
                         <img src="/img/google-color.svg" alt="Google">Google</a></div>
             </div>
