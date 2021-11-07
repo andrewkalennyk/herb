@@ -67,3 +67,13 @@ if (! function_exists('get_order_types_color')) {
     }
 
 }
+
+if (!function_exists('get_lang_field')) {
+
+    function get_lang_field(string $field): string {
+        return app()->getLocale() == 'ru' ? $field : $field . app()->getLocale();
+    }
+
+}
+
+

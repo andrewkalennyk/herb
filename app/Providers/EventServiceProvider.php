@@ -20,6 +20,7 @@ use App\Listeners\RepeatOrder;
 use App\Listeners\ResetPassword;
 use App\Listeners\ResetPasswordSendMail;
 use App\Listeners\SendOrderAdminEmail;
+use App\Listeners\SendOrderUserEmail;
 use App\Listeners\SendRegisterEmail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -48,6 +49,7 @@ class EventServiceProvider extends ServiceProvider
         CreateOrderCartEvent::class => [
             CreateOrderCart::class,
             SendOrderAdminEmail::class,
+            SendOrderUserEmail::class,
         ],
 
         RepeatOrderEvent::class => [
@@ -59,10 +61,10 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         UpdateNpEvent::class => [
-            //UpdateRegions::class,
-            //UpdateCities::class,
-            //UpdateWareHousesTypes::class,
-            //UpdateStreets::class,
+            UpdateRegions::class,
+            UpdateCities::class,
+            UpdateWareHousesTypes::class,
+            UpdateStreets::class,
             UpdateWareHouses::class
         ]
     ];

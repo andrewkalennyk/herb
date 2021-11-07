@@ -6,7 +6,9 @@ namespace App\Http\Controllers;
 use App\Events\GeneratePromoEvent;
 use App\Models\Order;
 use App\Models\Promocode;
+use App\Models\User;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+use Illuminate\Http\Request;
 
 class ProfileController
 {
@@ -52,5 +54,22 @@ class ProfileController
            'status' => (bool)event(new GeneratePromoEvent()),
            'codes'  => Promocode::user(Sentinel::getUser()->id)->orderBy('created_at','desc')->get(),
        ];
+    }
+
+    public function saveProfile(Request $request)
+    {
+        $email = $request->input('email');
+        if (Sentinel::getUser()->email == $email) {
+            User::where('email',$email )->update(
+                [
+                    'first_name' => $request->input('first_name'),
+                    'last_name' => $request->input('last_name'),
+                    'patronymic_name' => $request->input('patronymic_name'),
+                    'date_birth' => $request->input('date_birth'),
+                    'phone' => $request->input('phone'),
+                ]
+            );
+        }
+        return ['status' => true];
     }
 }

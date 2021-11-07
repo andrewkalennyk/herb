@@ -12,9 +12,15 @@ class Order extends BaseModel
         'first_name',
         'last_name',
         'phone',
+        'email',
         'delivery_type',
         'paid_type',
         'type',
+        'np_region_id',
+        'np_city_id',
+        'np_warehouse_id',
+        'np_street_id',
+        'house',
         'total',
         'is_paid'
     ];

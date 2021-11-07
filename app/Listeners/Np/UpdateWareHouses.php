@@ -33,37 +33,25 @@ class UpdateWareHouses
     {
         if($this->cities->count()) {
             foreach ($this->cities as $city) {
-                $wareHouses = data_get($event->npApi->getSettlements($city->ref), 'data');
+                $wareHouses = data_get($event->npApi->getWarehouses($city->ref), 'data');
                 if (count($wareHouses)) {
+                    $warehouseType = NpWareHouseType::where('title', 'Почтовое отделение')->first();
                     foreach ($wareHouses as $wareHouse) {
-                        $type = NpWareHouseType::ref($wareHouse['TypeOfWarehouse'])->first();
-                        NpWareHouse::updateOrCreate([
-                            'ref' => $wareHouse['Ref']
-                        ], [
-                            'np_city_id' => $city ? $city->id : null,
-                            'np_warehouse_type_id' => $type->id,
-                            'title_ua' => $wareHouse['Description'],
-                            'title' => $wareHouse['DescriptionRu'],
-                            'title_en' => $wareHouse['Description'],
-                            'is_active' => 1
-                        ]);
+                        if ($wareHouse['TypeOfWarehouse'] == $warehouseType->ref) {
+                            NpWareHouse::updateOrCreate([
+                                'ref' => $wareHouse['Ref']
+                            ], [
+                                'np_city_id' => $city ? $city->id : null,
+                                'np_warehouse_type_id' => $warehouseType->id,
+                                'title_ua' => $wareHouse['Description'],
+                                'title' => $wareHouse['DescriptionRu'],
+                                'title_en' => $wareHouse['Description'],
+                                'is_active' => 1
+                            ]);
+                        }
                     }
                 }
             }
-        }
-        foreach (data_get($event->npApi->getWarehouses(''), 'data') as $wareHouse) {
-            $type = NpWareHouseType::ref($wareHouse['TypeOfWarehouse'])->first();
-            $city = NpCity::ref($wareHouse['CityRef'])->first();
-            NpWareHouse::updateOrCreate([
-                'ref' => $wareHouse['Ref']
-            ], [
-                'np_city_id' => $city ? $city->id : null,
-                'np_warehouse_type_id' => $type->id,
-                'title_ua' => $wareHouse['Description'],
-                'title' => $wareHouse['DescriptionRu'],
-                'title_en' => $wareHouse['Description'],
-                'is_active' => 1
-            ]);
         }
     }
 }

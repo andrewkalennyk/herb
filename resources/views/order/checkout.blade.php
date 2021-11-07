@@ -15,10 +15,10 @@
                         <!-- nav-->
                         <div class="checkout__nav nav">
                             <div class="nav__option">
-                                <a class="active" href="javascript:void(0)">{{__t('Я новый покупатель')}}</a>
+                                <a class="active" href="javascript:void(0)" data-customer="new">{{__t('Я новый покупатель')}}</a>
                             </div>
                             <div class="nav__option">
-                                <a href="javascript:void(0)">{{__t('Я постоянный покупатель')}}</a>
+                                <a href="javascript:void(0)" {{!$user ? 'data-fancybox data-src=#login data-touch=false' : ''}} data-customer="often">{{__t('Я постоянный покупатель')}}</a>
                             </div>
                         </div>
                         <div class="checkout__form">
@@ -26,28 +26,28 @@
                             <div class="field">
                                 <div class="field__label">{{__t('Имя')}}</div>
                                 <div class="field__wrap">
-                                    <input type="text" name="first_name" value="{{ user_prop($user,'first_name') }}">
+                                    <input type="text" class="changeable" name="first_name" data-value="{{ user_prop($user,'first_name') }}" value="">
                                 </div>
                             </div>
                             <!-- field-->
                             <div class="field">
                                 <div class="field__label">{{__t('Фамилия')}}</div>
                                 <div class="field__wrap">
-                                    <input type="text" name="last_name" value="{{ user_prop($user,'last_name') }}">
+                                    <input type="text" class="changeable" name="last_name" data-value="{{ user_prop($user,'last_name') }}" value="">
                                 </div>
                             </div>
                             <!-- field-->
                             <div class="field">
                                 <div class="field__label">{{__t('Телефон')}}</div>
                                 <div class="field__wrap">
-                                    <input type="text" name="phone" value="{{ user_prop($user,'phone') }}">
+                                    <input type="text" class="changeable" name="phone" data-value="{{ user_prop($user,'phone') }}" value="">
                                 </div>
                             </div>
                             <!-- field-->
                             <div class="field">
-                                <div class="field__label">{{__t('Город')}}</div>
+                                <div class="field__label">{{__t('Email')}}</div>
                                 <div class="field__wrap">
-                                    <input type="text" name="city">
+                                    <input type="text" class="changeable" name="email" data-value="{{ user_prop($user,'email') }}" value="">
                                 </div>
                             </div>
                         </div>
@@ -73,12 +73,48 @@
                                 <!-- switch-->
                                 @foreach(get_delivery_types() as $key => $type)
                                     <label class="switch">
-                                        <input type="radio" name="delivery_type" value="{{$key}}" {{$loop->first ? 'checked' : ''}}><span>{{__t($type)}}</span>
+                                        <input type="radio" name="delivery_type" value="{{$key}}" {{$loop->last ? 'checked' : ''}}><span>{{__t($type)}}</span>
                                     </label>
                                 @endforeach
                             </div>
                         </div>
                     @endif
+                    <div class="checkout__section np_section">
+                        @if($regions->count())
+                            <div class="checkout__group np_region_group">
+                                <select name="np_region_id">
+                                    <option value="">{{__t('Выберите регион')}}</option>
+                                    @foreach($regions as $region)
+                                        <option value="{{$region->id}}">{{$region->t('title')}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        @endif
+                        <div class="checkout__group np_city_group">
+                            <select name="np_city_id">
+                                <option value="">{{__t('Выберите город')}}</option>
+                            </select>
+                        </div>
+                        <div class="checkout__group np_warehouse_group">
+                            <select name="np_warehouse_id">
+                                <option value="">{{__t('Выберите отделение')}}</option>
+                            </select>
+                        </div>
+                        <div class="checkout__group np_street_group">
+                            <select name="np_street_id">
+                                <option value="">{{__t('Выберите улицу')}}</option>
+                            </select>
+                        </div>
+                        <div class="checkout__group np_street_group">
+                            <!-- field-->
+                            <div class="field">
+                                <div class="field__label">{{__t('Дом')}}</div>
+                                <div class="field__wrap">
+                                    <input type="text" class="changeable" name="house" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @if(get_pay_types())
                         <div class="checkout__section">
                             <div class="checkout__subtitle title title_md">{{__t('Способ оплаты')}}:</div>
@@ -86,7 +122,7 @@
                                 @foreach(get_pay_types() as $key => $type)
                                     <!-- switch-->
                                     <label class="switch">
-                                        <input type="radio" name="paid_type" value="{{$key}}" {{$loop->first ? 'checked' : ''}}><span>{{__t($type)}}</span>
+                                        <input type="radio" name="paid_type" value="{{$key}}" {{$loop->last ? 'checked' : ''}}><span>{{__t($type)}}</span>
                                     </label>
                                 @endforeach
                             </div>
@@ -157,7 +193,13 @@
 
 @section('after_script')
     <script src="/js/order.js"></script>
-
+    <script>
+        Order.isUser = {{ (bool)$user}};
+        Order.cities = {!! $cities->toJson() !!};
+        Order.warehouses = {!! $wareHouses->toJson() !!};
+        Order.streets = {!! $streets->toJson() !!};
+        Order.lang = '{{ app()->getLocale() }}';
+    </script>
     <style>
         .cross {
             text-decoration: line-through;

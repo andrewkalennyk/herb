@@ -39,6 +39,7 @@ Route::group(
                 Route::get('/', 'ProfileController@showProfile')->name('profile')->middleware('profile');
                 Route::get('/orders', 'ProfileController@showOrdersProfile')->name('profile-orders')->middleware('profile');
                 Route::get('/loyalty', 'ProfileController@showLoyaltyProfile')->name('profile-loyalty')->middleware('profile');
+                Route::post('/save', 'ProfileController@saveProfile')->name('profile-save')->middleware('profile');
                 Route::post('/login', 'Auth\LoginController@authenticate')->name('profile-login');
                 Route::post('/register', 'Auth\RegisterController@register')->name('profile-register');
                 Route::post('/reset', 'Auth\RegisterController@reset')->name('profile-reset');
