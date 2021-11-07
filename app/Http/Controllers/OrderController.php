@@ -6,6 +6,10 @@ use App\Events\CreateOrderCartEvent;
 use App\Events\RepeatOrderEvent;
 use App\Http\Requests\OrderRequest;
 use App\Http\Requests\UsePromoRequest;
+use App\Models\NpArea;
+use App\Models\NpCity;
+use App\Models\NpStreet;
+use App\Models\NpWareHouse;
 use App\Models\Order;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -28,13 +32,30 @@ class OrderController extends TreeController
             return redirect('/');
         }
 
-        return view('order.checkout', compact('cart', 'total', 'user', 'discount', 'discountTotal'));
+        $regions = NpArea::active()->get();
+        $cities = NpCity::active()->get();
+        $wareHouses = NpWareHouse::active()->get();
+        $streets = NpStreet::active()->get();
+
+        return view('order.checkout', compact(
+            'cart',
+            'total',
+            'user',
+            'discount',
+            'discountTotal',
+            'regions',
+            'cities',
+            'wareHouses',
+            'streets'
+        ));
     }
 
     public function doOrder(OrderRequest $request): array
     {
+        $order = Order::create($request->all());
         return [
-            'status' => (bool)event(new CreateOrderCartEvent(Order::create($request->all())))
+            'status' => (bool)event(new CreateOrderCartEvent($order)),
+            'order_id'=> str_pad($order->id, 10, '0', STR_PAD_LEFT)
         ];
     }
 

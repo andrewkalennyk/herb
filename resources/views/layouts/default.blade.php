@@ -61,11 +61,13 @@
 
 @include('popups.cart')
 @include('popups.login')
+@include('popups.success')
 
 <!-- scripts-->
 <script src="/js/lib/jquery.min.js"></script>
 <script src="/js/lib/jquery.fancybox.min.js"></script>
 <script src="/js/lib/jquery.validate.min.js"></script>
+<script src="/js/lib/jquery.mask.min.js"></script>
 <script src="/js/lib/slick.min.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/login.js"></script>
