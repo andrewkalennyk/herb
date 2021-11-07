@@ -7,7 +7,9 @@
     </div>
     <div class="select__drop js-select-drop">
         @foreach($langs as $slug => $title)
-            <a class="select__option" href="{{geturl(request()->fullUrl(), $slug)}}">{{ucfirst($title)}}</a>
+            @if($slug !== app()->getLocale() )
+                <a class="select__option" href="{{geturl(request()->fullUrl(), $slug)}}">{{ucfirst($title)}}</a>
+            @endif
         @endforeach
     </div>
 </div>
