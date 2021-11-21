@@ -22,16 +22,12 @@ class ProductController extends TreeController
                 ->firstOrFail();
         }
 
-        /*$products = Cache::tags([Product::CACHE_TAG, ProductPrice::CACHE_TAG])->rememberForever('product_category_' . $page->id, function () use($page) {
-            return Product::with('product_prices','category.parent')->active()->byCategory($page)->filter()->get();
-        });*/
-
         $products = Product::with('category.parent')
             ->productDefaultPrices()
             ->active()
             ->byCategory($page)
             ->order()
-            ->paginate(1);
+            ->paginate(6);
 
         return view('products.index', compact('page','products'));
     }
@@ -40,6 +36,11 @@ class ProductController extends TreeController
 
         $page = Product::with('product_prices')->slug($slug)->firstOrFail();
         $pictures = $page->getOtherImgWithOriginal($nameField = "additional_pictures");
+
+        $pictures = $pictures ?? [];
+
+        array_unshift($pictures , '/' . $page->picture); // stupid fucking....
+
 
         $defaultPrice = $page->product_prices->where('is_default', 1)->first();
 

@@ -30,7 +30,7 @@ class Products extends Resource
                 Froala::make('Описание', 'description')->language()->onlyForm(),
                 Checkbox::make('Активность', 'is_active')->filter(),
                 Froala::make('Состав', 'composition')->language()->onlyForm(),
-                Text::make('Url', 'slug')->onlyForm(),
+                //Text::make('Url', 'slug')->onlyForm(),
                 Checkbox::make('Новые', 'is_new')->onlyForm(),
                 Checkbox::make('Хит', 'is_hit')->onlyForm(),
             ],
@@ -53,7 +53,7 @@ class Products extends Resource
 
     public function actions()
     {
-        return Actions::make()->insert()->update()->preview()->delete()->clone();
+        return Actions::make()->insert()->update()/*->preview()*/->delete()->clone();
     }
 
 }

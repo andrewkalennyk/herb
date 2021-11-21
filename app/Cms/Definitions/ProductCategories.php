@@ -25,6 +25,7 @@ class ProductCategories extends Resource
                 ->options((new Options('parent'))->keyField('title'))
                 ->nullable('...')
                 ->default(null)
+                ->filter()
 
         ];
     }

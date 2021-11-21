@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use Exception;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Hash;
 
 class FacebookController
 {
@@ -17,26 +19,36 @@ class FacebookController
     public function loginWithFacebook()
     {
         try {
-            $user = Socialite::driver('facebook')->user();
-            $isUser = User::where('fb_id', $user->id)->first();
+            $userFb = Socialite::driver('facebook')->user();
+
+            $isUser = User::where('fb_id', $userFb->id)->first();
 
             if ($isUser) {
-                Auth::login($isUser);
+                Sentinel::login($isUser);
                 return redirect('/profile');
             } else {
-                $createUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'fb_id' => $user->id,
-                    'password' => encrypt('admin@123')
-                ]);
+                $user = User::where('email', $userFb->email)->first();
 
-                Auth::login($createUser);
+                if ($user) {
+                    $user->fb_id = $userFb->id;
+                    $user->save();
+                } else {
+                    $user = Sentinel::registerAndActivate([
+                        'name' => $userFb->name,
+                        'email' => $userFb->email,
+                        'first_name' => $userFb->name,
+                        'last_name' => '',
+                        'fb_id' => $userFb->id,
+                        'password' => Hash::make($userFb->name . $userFb->id)
+                    ]);
+                }
+
+                Sentinel::login($user);
                 return redirect('/profile');
             }
-
         } catch (Exception $exception) {
             dd($exception->getMessage());
+            \Log::info($exception->getMessage());
         }
     }
 

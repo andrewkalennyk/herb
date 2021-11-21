@@ -88,15 +88,6 @@ class Product extends BaseModel
         return $query;
     }
 
-    public function scopeSearch($query, $search)
-    {
-        $locale = app()->getLocale();
-        $prefix = $locale != config('app.locale') ? '_' . $locale : '';
-        return $query->where('title' . $prefix, 'like', '%' . $search . '%')
-            ->orWhere('short_description' . $prefix, 'like', '%' . $search . '%')
-            ->orWhere('description' . $prefix, 'like', '%' . $search . '%');
-    }
-
     public function getDefaultPriceAttribute()
     {
         return $this->product_prices->count() ?

@@ -13,6 +13,7 @@ class User extends UserBuilder
         'patronymic_name',
         'phone',
         'date_birth',
+        'password',
         'fb_id',
     ];
 }
