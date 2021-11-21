@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "adbeecde0c4084977603957c905798e5",
+    "content-hash": "cc5c97529b5d16307121c0551b0ebddc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -478,6 +478,68 @@
                 "source": "https://github.com/cartalyst/support/tree/4.x"
             },
             "time": "2020-03-03T18:26:42+00:00"
+        },
+        {
+            "name": "deniztezcan/laravel-liqpay",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deniztezcan/laravel-liqpay.git",
+                "reference": "03d38e84e2091a07cc5dec5747e10d5911fa4e08"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deniztezcan/laravel-liqpay/zipball/03d38e84e2091a07cc5dec5747e10d5911fa4e08",
+                "reference": "03d38e84e2091a07cc5dec5747e10d5911fa4e08",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "nesbot/carbon": "^2.16"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DenizTezcan\\LiqPay\\LiqPayServiceProvider"
+                    ],
+                    "aliases": {
+                        "LiqPay": "DenizTezcan\\LiqPay\\Facades\\LiqPay"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DenizTezcan\\LiqPay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Deniz Tezcan",
+                    "email": "howdy@deniztezcan.me"
+                },
+                {
+                    "name": "Liqpay",
+                    "email": "support@liqpay.ua",
+                    "homepage": "https://www.liqpay.ua/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "LiqPay for Laravel",
+            "homepage": "https://github.com/deniztezcan/laravel-liqpay",
+            "keywords": [
+                "laravel",
+                "liqpay"
+            ],
+            "support": {
+                "issues": "https://github.com/deniztezcan/laravel-liqpay/issues",
+                "source": "https://github.com/deniztezcan/laravel-liqpay/tree/v1.0.0"
+            },
+            "time": "2020-09-09T13:44:52+00:00"
         },
         {
             "name": "doctrine/cache",

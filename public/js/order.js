@@ -70,6 +70,10 @@ let Order = {
                     dataType: "json",
                     success: function (response) {
                         if (response.status) {
+                            window.console.log(response.pay_form);
+                            if (response.pay_form) {
+                                return location.href = response.pay_form;
+                            }
                             $('.order_nmbr').html('№'+response.order_id);
                             $(".popup_success_btn").click();
                         } else {

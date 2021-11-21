@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Exception;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Support\Facades\Auth;
@@ -47,7 +48,6 @@ class FacebookController
                 return redirect('/profile');
             }
         } catch (Exception $exception) {
-            dd($exception->getMessage());
             \Log::info($exception->getMessage());
         }
     }
