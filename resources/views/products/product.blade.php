@@ -14,7 +14,7 @@
             </div>
             <div class="card__row">
                 <div class="card__col">
-                    @if(count($pictures))
+                    @if(!empty($pictures))
                     <!-- gallery-->
                         <div class="gallery js-gallery">
                             <div class="gallery__carousel js-gallery-carousel">
