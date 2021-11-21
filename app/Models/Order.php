@@ -22,7 +22,9 @@ class Order extends BaseModel
         'np_street_id',
         'house',
         'total',
-        'is_paid'
+        'is_paid',
+        'is_checked',
+        'paid_at'
     ];
 
     const DELIVERY_NOVA_POSHTA = 'np';

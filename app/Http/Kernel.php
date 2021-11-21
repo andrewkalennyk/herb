@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\Profile;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -40,7 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
         'profile' => [
-            Profile::class
+            \App\Http\Middleware\Profile::class
         ],
 
         'api' => [

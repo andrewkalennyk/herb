@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -31,7 +32,7 @@ class FacebookController
                     'password' => encrypt('admin@123')
                 ]);
 
-                Auth::login($createUser);
+                Sentinel::login($createUser);
                 return redirect('/profile');
             }
 

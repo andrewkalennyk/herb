@@ -32,6 +32,10 @@ Route::group(
         Route::post('/generate-promo-code', 'ProfileController@doGeneratePromoCode')->name('generate_promo_code')->middleware('profile');
         Route::post('/use-promo-code', 'OrderController@doUseCode')->name('use-promo');
 
+        Route::get('/liqPay-redirect', 'OrderController@liqPayRedirect')->name('liqpay_redirect_url');
+        Route::get('/success-pay', 'OrderController@successPay')->name('result_liqpay_url');
+        Route::post('/server-liqpay-pay', 'OrderController@serverLiqpay')->name('server_liqpay_url');
+
 
         Route::group(
             ['prefix' => 'profile'],
